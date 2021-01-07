@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT tạo bảng cơ bản</title>
+    <style>
+        table {
+            margin: auto;
+            width: 50%;
+        }
+        #bang2,
+        #bang2 th,
+        #bang2 td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        #bang2 .days {
+            background-color: gold;
+        }
+        #bang2 .bg-or {
+            background-color: orange;
+        }
+        #bang2 {
+            text-align: center;
+        }
+        #bang1 .left {
+            text-align: left;
+        }
+        #bang1 .right {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<h1 style="color: blue"><span style="font-family: Arial"><p style="text-align: center">THỜI KHÓA BIỂU</p></span></h1>
+    <table style="font-family: Arial" id="bang1">
+        <tr>
+            <th class="left" style="color: blue">Lớp T0908I</th>
+            <th class="right" style="color: blue">Thời gian học: 13h30-17h30</th>
+        </tr>
+        <tr>
+            <th class="left" style="color: blue">Giáo viên: KhoaNV</th>
+            <th class="right" style="color: blue">Ngày học: Thứ 3, 5, 7</th>
+        </tr>
+        <tr>
+            <th class="left" style="color: blue">Phòng học: Class3/Lab3</th>
+        </tr>
+    </table>
+    <table id="bang2">
+        <tr>
+            <th colspan="3"></th>
+            <th class="days"><strong>Thứ 3</strong></th>
+            <th class="days"><strong>Thứ 5</strong></th>
+            <th class="days"><strong>Thứ 7</strong></th>
+        </tr>
+        <tr>
+            <td class="bg-or"><strong>Tuần</strong></td>
+            <td class="bg-or"><strong>Ngày bắt đầu</strong></td>
+            <td class="bg-or"><strong>Ngày kết thúc</strong></td>
+            <td class="bg-or" colspan="3"; align="center"><strong>Môn học</strong></td>
+        </tr>
+        <tr>
+            <td><p>01</p></td>
+            <td><p>01/09/2009</p></td>
+            <td><p>05/09/2009</p></td>
+            <td><p>CF-T1, L1</p></td>
+            <td><p>CF-T2, L2</p></td>
+            <td><p>CF-T3, L3</p></td>
+        </tr>
+        <tr>
+            <td><p>02</p></td>
+            <td><p>08/09/2009</p></td>
+            <td><p>12/09/2009</p></td>
+            <td><p>CF-T4, L4</p></td>
+            <td><p>CF-Written Test</p></td>
+            <td><p>C-T1, L1</p></td>
+        </tr>
+        <tr>
+            <td><p>03</p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+            <td><p></p></td>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>
