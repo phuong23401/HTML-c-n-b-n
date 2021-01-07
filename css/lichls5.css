@@ -1,0 +1,48 @@
+table {
+    font-family: Arial;
+    width: 30%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+table td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.sunday {
+    color: #ff0000;
+}
+
+.sat {
+    color: #0000ff;
+}
+
+.row-days {
+    font-weight: 700;
+}
+
+.nobd {
+    border: 0;
+}
+
+.row-days .days {
+    background-color: goldenrod;
+    color: #ffffff;
+    border: 1px solid white;
+
+}
+
+.row-days .sunday {
+    background-color: red;
+}
+
+.row-days .sat {
+    background-color: blue;
+}
+
+.month {
+    font-family: Arial;
+    text-align: center;
+    color: blue;
+}
