@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls7 chuyển đổi tiền </title>
+</head>
+<body>
+    <table>
+        <tr style="text-align: center";>
+            <td><strong>Amount</strong></td>
+            <td><strong>Form Currency</strong></td>
+            <td><strong>To Currency</strong></td>
+        </tr>
+        <tr style="text-align: center">
+            <td>
+                <input type="text" name="amount" id="amount"/>
+            </td>
+            <td>
+                <select name="fromCurrency" id="fromCurrency">
+                    <option value="vnd">VND</option>
+                    <option value="usd">USD</option>
+                    <option value="gbp">Bảng Anh</option>
+                    <option value="rub">RUB</option>
+                    <option value="eur">EUR</option>
+                </select>
+            </td>
+            <td>
+                <select name="toCurrency" id="toCurrency">
+                    <option value="vnd">VND</option>
+                    <option value="usd">USD</option>
+                    <option value="gbp">Bảng Anh</option>
+                    <option value="rub">RUB</option>
+                    <option value="eur">EUR</option>
+            </td>
+            <td>
+                <button type="button" style="background-color: blueviolet" onclick="convert()">Convert</button>
+            </td>
+        </tr>
+    </table>
+<p id="result" style="color: blue"></p>
+</body>
+    <script src="javascript/ls7chuyendoitien.js"></script>
+</html>
