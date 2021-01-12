@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls9 câu lệnh switch...case</title>
+</head>
+<body>
+<form method="post">
+    <input type="text" id="month"/>
+    <button type="button" value="days" onclick="days()">Tính số ngày</button>
+    <p id="calculate"></p>
+    <script>
+    function days() {
+        let month = document.getElementById('month').value;
+        let text;
+
+        switch (month) {
+            case '1':
+                text = 'Tháng 1 có 31 ngày.';
+                break;
+            case '2':
+                text = 'Tháng 2 có 28 hoặc 29 ngày.';
+                break;
+            case '3':
+                text = 'Tháng 3 có 31 ngày.';
+                break;
+            case '4':
+                text = 'Tháng 4 có 30 ngày.';
+                break;
+            case '5':
+                text = 'Tháng 5 có 31 ngày.';
+                break;
+            case '6':
+                text = 'Tháng 6 có 30 ngày.';
+                break;
+            case '7':
+                text = 'Tháng 7 có 31 ngày.';
+                break;
+            case '8':
+                text = 'Tháng 8 có 31 ngày.';
+                break;
+            case '9':
+                text = 'Tháng 9 có 30 ngày.';
+                break;
+            case '10':
+                text = 'Tháng 10 có 31 ngày.';
+                break;
+            case '11':
+                text = 'Tháng 11 có 30 ngày.';
+                break;
+            case '12':
+                text = 'Tháng 12 có 31 ngày.';
+                break;
+        }
+        document.getElementById('calculate').innerHTML = text;
+    }
+    </script>
+</form>
+</body>
+</html>
