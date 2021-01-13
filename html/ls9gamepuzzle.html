@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls9 game puzzle</title>
+    <style></style>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-fluid {
+            max-width: 940px;
+        }
+
+        .puzzles {
+            margin-top: 1em;
+            margin: auto;
+        }
+
+        img {
+            display: block;
+            margin: 1em;
+            padding: 0.2em;
+            box-shadow: 2px 3px 3px black;
+            width: 600px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="puzzles">
+        <img id="img1" src="../image/panda_swap_part1x1.jpg" alt="" onclick="selectImage(this)"/>
+        <img id="img2" src="../image/panda_swap_part2x1.jpg" alt="" onclick="selectImage(this)"/>
+        <img id="img3" src="../image/panda_swap_part3x1.jpg" alt="" onclick="selectImage(this)"/>
+        <img id="img4" src="../image/panda_swap_part4x1.jpg" alt="" onclick="selectImage(this)"/>
+        <img id="img5" src="../image/panda_swap_part5x1.jpg" alt="" onclick="selectImage(this)"/>
+    </div>
+</div>
+
+<script>
+    // function setImagesRandom() {
+    //     for (var i=1; i <= 5; i++)
+    //     {
+    //         var num1 = Math.floor ((Math.random() * 3));
+    //         placeImage(i, num1);
+    //     }
+    // }
+
+    function selectImage(inputImg) {
+
+        if (inputImg.src.includes("panda_swap")) {
+            inputImg.src = inputImg.src.replace("panda_swap" , "funny-cat1")
+        } else if (inputImg.src.includes("funny-cat1")) {
+            inputImg.src = inputImg.src.replace("funny-cat1" , "monkey")
+        } else {
+            inputImg.src = inputImg.src.replace("monkey" , "panda_swap")
+        }
+
+        inputImg.src = inputImg.src.replace("http://localhost:63342/PhuongNewProject" , "..");
+
+        let srcImg1 = document.getElementById('img1').src;
+        let srcImg2 = document.getElementById('img2').src;
+        let srcImg3 = document.getElementById('img3').src;
+        let srcImg4 = document.getElementById('img4').src;
+        let srcImg5 = document.getElementById('img5').src;
+
+    //     let listSrcImg = [srcImg1,srcImg2,srcImg3,srcImg4,srcImg5];
+    //     let checkPanda = checkDuplicateImg(listSrcImg,panda_swap);
+    //     let checkCat = checkDuplicateImg(listSrcImg,funny_cat1);
+    //     let checkMonkey = checkDuplicateIag(listSrcImg,monkey);
+    //
+    //     if (checkPanda|| checkCat || checkMonkey){
+    //         for (let i=0;i<5;i++){
+    //             document.getElementsByTagName("img")[i].style.border = "thick solid red";
+    //         }
+    //     } else {
+    //         for (let i=0;i<5;i++){
+    //             document.getElementsByTagName("img")[i].style.border = "none";
+    //         }
+    //     }
+    // }
+    //
+    // function checkDuplicateImage(listSrcImg,animal){
+    //     for (let i = 0;i< 5;i++){
+    //         if (!listSrcImg[i].includes(animal)){
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
+</script>
+</body>
+</html>
