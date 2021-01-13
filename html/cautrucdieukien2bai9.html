@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls9 luyện tập cấu trúc điều kiện 02 bài 9</title>
+</head>
+<body>
+<script>
+    let a = prompt('Mời nhập chiều dài cạnh thứ 1');
+    let b = prompt('Mời nhập chiều dài cạnh thứ 2');
+    let c = prompt('Mời nhập chiều dài cạnh thứ 3');
+
+    if (Number.parseInt(a) && Number.parseInt(b) && Number.parseInt(c)) {
+        if (a && b && c > 0) {
+            if ((a + b > c) && (b + c > a) && (a + c > b)) {
+                document.write('Đây là 3 cạnh của một tam giác')
+            } else {
+                document.write('Đây không phải 3 cạnh của một tam giác')
+            }
+        }else {
+            document.write('Đây không phải 3 cạnh của một tam giác')
+        }
+    } else {
+        alert('Mời nhập lại')
+    }
+</script>
+</body>
+</html>

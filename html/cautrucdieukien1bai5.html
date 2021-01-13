@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls9 luyện tập cấu trúc điều kiện 01 bài 5</title>
+</head>
+<body>
+<script>
+    let a = prompt('Mời nhập điểm trung bình học kì 1');
+    let b = prompt('Mời nhập điểm trung bình học kì 2');
+    let c = (a +  b * 2 ) / 3
+
+    if (Number.parseInt(a) && Number.parseInt(b) && Number.parseInt(c)) {
+        if (c >= 7.5 && a < 10) {
+            document.write('Học lực giỏi');
+        } else if (c >= 6.5) {
+            document.write('Học lực khá');
+        } else if (c >= 5 && c > 0) {
+            document.write('Học lực trung bình');
+        } else {
+            document.write('Học lực yếu')
+        }
+    } else {
+        alert('Mời nhập lại')
+    }
+</script>
+</body>
+</html>

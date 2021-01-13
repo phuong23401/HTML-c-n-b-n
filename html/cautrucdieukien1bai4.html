@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls9 luyện tập cấu trúc điều kiện 1 bài 4</title>
+</head>
+<body>
+<script>
+    let a = prompt('Mời nhập số thứ 1');
+    let b = prompt('Mời nhập số thứ 2');
+    let c = prompt('Mời nhập số thứ 3');
+
+    if (Number.parseInt(a) && Number.parseInt(b) && Number.parseInt(c)) {
+        if (a > b && a > c) {
+            max = a;
+        } else if (b > a && b > c) {
+            max = b;
+        } else {
+            max = c;
+        }
+    } else {
+        alert('Mời nhập lại')
+    }
+
+    document.write('Số lớn nhất là: ' + max)
+</script>
+</body>
+</html>

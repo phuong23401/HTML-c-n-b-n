@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls9 luyện tập cấu trúc điều kiện 02 bài 11</title>
+</head>
+<body>
+<script>
+    let luong = prompt('Mời nhập mức lương hàng tháng');
+    let thue = 0;
+
+    if (Number.parseInt(luong)) {
+        if (luong < 0 ) {
+            alert('Mức lương không được nhỏ hơn 0')
+        }
+        else if (luong <= 5 * Math.pow(10,6)) {
+            thue = luong * 5 / 100
+            document.write('Mức thuế phải nộp là ' + thue + ' VND')
+        }
+        else if (luong <= Math.pow(10,7)) {
+            thue = luong * 10 / 100 - (0.25 * Math.pow(10,6))
+            document.write('Mức thuế phải nộp là ' + thue + ' VND')
+        }
+        else if (luong <= 18 * Math.pow(10,6)) {
+            thue = luong * 15 / 100 - (0.75 * Math.pow(10,6))
+            document.write('Mức thuế phải nộp là ' + thue + ' VND')
+        }
+        else if (luong <= 32 * Math.pow(10,6)) {
+            thue = luong * 20 / 100 - (1.65 * Math.pow(10,6))
+            document.write('Mức thuế phải nộp là ' + thue + ' VND')
+        }
+        else if (luong <= 52 * Math.pow(10,6)) {
+            thue = luong * 25 / 100 - (3.25 * Math.pow(10,6))
+            document.write('Mức thuế phải nộp là ' + thue + ' VND')
+        }
+        else if (luong <= 80 * Math.pow(10,6)) {
+            thue = luong * 30 / 100 - (5.85 * Math.pow(10,6))
+            document.write('Mức thuế phải nộp là ' + thue + ' VND')
+        }
+        else if (luong > 80 * Math.pow(10,6)) {
+            thue = luong * 35 / 100 - (9.85 * Math.pow(10,6))
+            document.write('Mức thuế phải nộp là ' + thue + ' VND')
+        }
+    } else {
+        alert('Mời nhập lại')
+    }
+</script>
+</body>
+</html>

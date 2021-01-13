@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls9 luyện tập cấu trúc điều kiện 01 bài 7</title>
+</head>
+<body>
+<script>
+    let a = prompt('Mời nhập số phút')
+    let tong;
+    let phicodinh = 900;
+
+    if (Number.parseInt(a)) {
+        if (a > 200) {
+            phi = (a - 200) * 200 + 150 * 400 + 50 * 600;
+        } else if (a > 50) {
+            phi = (a - 50) * 400 + 50 * 600;
+        } else {
+            phi = a * 600;
+        }
+
+        tong = phi + phicodinh;
+        document.write('Bạn đã gọi ' + a + ' phút.')
+        document.write(' Số tiền phải trả là ' + tong + 'VND')
+    } else {
+        alert('Mời nhập lại')
+    }
+</script>
+</body>
+</html>

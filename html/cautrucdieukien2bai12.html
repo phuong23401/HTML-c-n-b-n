@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls9 luyện tập cấu trúc điều kiện 02 bài 12\</title>
+</head>
+<body>
+<script>
+    let soTienVay = prompt("Mời nhập số tiền cần vay");
+    let laiSuatVay = prompt('Mời nhập lãi suất 1 năm');
+    let soThangVay = prompt('Mời nhập số tháng cho vay');
+    let tienGocHangThang = 0;
+    let laiThangDau = 0;
+    let laiThangTiepTheo = 0;
+    let tienGocDu = 0;
+
+    if (Number.parseInt(soTienVay) && Number.parseInt(laiSuatVay) && Number.parseInt(soThangVay)) {
+        tienGocHangThang = soTienVay / soThangVay
+        laiThangDau = soTienVay * laiSuatVay
+        tienGocDu = soTienVay - tienGocHangThang
+        laiThangTiepTheo = tienGocDu  * laiSuatVay
+
+        document.write('Tiền gốc hàng tháng phải trả là: ' + tienGocHangThang + ' VND.')
+        document.write(' Tiền lãi tháng đầu phải trả là: ' + laiThangDau + ' VND.')
+        document.write(' Tiền lãi các tháng tiếp theo là: ' + laiThangTiepTheo + ' VND')
+    } else {
+        document.write('Không tính được. Mời nhập lại')
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls9 luyện tập cấu trúc điều kiện 02 bài 10</title>
+</head>
+<body>
+<script>
+    let bac1 = 1678;
+    let bac2 = 1734;
+    let bac3 = 2014;
+    let bac4 = 2536;
+    let bac5 = 2834;
+    let bac6 = 2927;
+    let sodien = prompt('Mời nhập số điện (kWh)');
+    let tiendien = 0;
+
+    if (Number.parseInt(sodien)) {
+        if (sodien<0) {
+            alert('Số điện phải lớn hơn 0')
+        }else if (sodien <= 50) {
+            tiendien = sodien * bac1;
+            document.write('Số điện phải trả là ' + tiendien + ' VND');
+        } else if (sodien <= 100) {
+            tiendien = 50 * bac1 + ((sodien - 50) * bac2);
+            document.write('Số điện phải trả là ' + tiendien + ' VND');
+        } else if (sodien <= 200) {
+            tiendien = 50 * bac1 + (50 * bac2) + ((sodien - 100) * bac3);
+            document.write('Số điện phải trả là ' + tiendien + ' VND');
+        } else if (sodien <= 300) {
+            tiendien = 50 * bac1 + (50 * bac2) + (100 * bac3) + ((sodien - 200) * bac4);
+            document.write('Số điện phải trả là ' + tiendien + ' VND');
+        } else if (sodien <= 400) {
+            tiendien = 50 * bac1 + (50 * bac2) + (100 * bac3) + (100 * bac4) + ((sodien - 300) * bac5);
+            document.write('Số điện phải trả là ' + tiendien + ' VND');
+        } else {
+            tiendien = 50 * bac1 + (50 * bac2) + (100 * bac3) + (100 * bac4) + (100 * bac5) + ((sodien - 400) * bac6);
+            document.write('Số điện phải trả là ' + tiendien + ' VND');
+        }
+    } else {
+        alert('Mời nhập lại')
+    }
+</script>
+</body>
+</html>
