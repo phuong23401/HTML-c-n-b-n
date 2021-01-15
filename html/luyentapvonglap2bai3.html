@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls11 luyện tập vòng lặp 02 bài 3</title>
+</head>
+<body>
+<script>
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j <= i; j++) {
+            document.write('*')
+        }
+        document.write('<br>')
+    }
+    document.write('<br>')
+
+
+    for (i = 0; i < 5; i++) {
+        for (j = 5; i < j; j--) {
+            document.write('*')
+        }
+        document.write('<br>')
+    }
+    document.write('<br>')
+
+
+    for (i = 0; i < 5; i++) {
+        for (k = 0; k < 5 - i - 1; k++) {
+            document.write('<span>&nbsp;&nbsp;</span>')
+        }
+        for (j = 5; j > 5 - i - 1; j--) {
+            document.write('*')
+        }
+        document.write('<br>')
+    }
+    document.write('<br>')
+
+
+    for (i = 0; i < 5; i++) {
+        for (k = 0; k < i; k++) {
+            document.write('<span>&nbsp;&nbsp;</span>')
+        }
+        for (j = 5; j > i; j--) {
+            document.write('*')
+        }
+        document.write('<br>')
+    }
+</script>
+</body>
+</html>

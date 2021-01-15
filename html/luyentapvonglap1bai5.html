@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls11 luyện tập vòng lặp 01 bài 5</title>
+</head>
+<body>
+<script>
+    let a = 0;
+    let b = 1;
+
+    for (let i = 1 ; i < 20; i++) {
+        let numOfPrev2 = a + b;
+        a = b;
+        b = numOfPrev2;
+        tong = a + b + numOfPrev2;
+    }
+    document.write('Tổng 20 số đầu tiên trong dãy Fibonacci là: ' + tong)
+</script>
+</body>
+</html>

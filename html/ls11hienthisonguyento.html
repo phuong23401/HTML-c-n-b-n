@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls11 hiển thị số nguyên tố</title>
+</head>
+<body>
+<script>
+    let numbers = prompt('Nhập số bất kì')
+    let count = 0;
+    let n = 2;
+
+    while (count < numbers) {
+        if (checkNumbers(n)) {
+            document.write(n + ' là số nguyên tố. ');
+            count++;
+        }
+        n++;
+    }
+
+    function checkNumbers(numbers) {
+        for (let n =2; n < numbers; n++) {
+            if (numbers % n == 0) {
+                return false;
+            }
+        } return true;
+    }
+
+</script>
+</body>
+</html>

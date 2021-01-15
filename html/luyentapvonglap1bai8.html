@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls11 luyện tập vòng lặp 01 bài 7</title>
+</head>
+<body>
+<button name="play" onclick="play()">Chơi</button>
+<script>
+    function play() {
+        let input1 = prompt('Nhập SỐ ĐẦU trong khoảng bạn muốn chọn');
+        let input2 = prompt('Nhập SỐ CUỐI trong khoảng bạn muốn chọn');
+        let myNum;
+        let playerNum = prompt('Nhập số bất kì trong khoảng bạn đã chọn (' + input1 + '-' + input2 + ')');
+        let turn = 0;
+        console.log(input1)
+        console.log(input2)
+        console.log(playerNum)
+
+        if (input1 < input2) {
+            myNum = Math.floor(Math.random() * (input2 - input1) + 1) + input1;
+            console.log(myNum)
+        } else {
+            myNum = Math.floor(Math.random() * (input1 - input2) + 1) + input2;
+            console.log(myNum)
+        }
+
+        while (turn <= 3) {
+            if (myNum < playerNum) {
+                document.write('Số bạn chọn lớn hơn. Hãy thử lại!')
+            } else if (myNum > playerNum) {
+                document.write('Số bạn chọn bé hơn. Hãy thử lại!')
+            } else {
+                document.write('CHÚC MỪNG BẠN ĐÃ CHỌN ĐÚNG!')
+            }
+
+            if (turn > 3) {
+                document.write('Bạn đã hết lượt chơi!')
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls11 luyện tập vòng lặp 02 bài 5</title>
+</head>
+<body>
+<script>
+    let soTienVay = prompt('Mời nhập số tiền vần vay');
+    let laiSuatVay = prompt('Mời nhập lãi suất 1 năm');
+    let soThangVay = prompt('Mời nhập số tháng cho vay');
+
+    for (i =0; i <= soThangVay; i++) {
+        soTienVay = soTienVay * (1 + laiSuatVay)
+        document.write('Số tiền phải trả hàng năm là: ' + soTienVay)
+    }
+</script>
+</body>
+</html>

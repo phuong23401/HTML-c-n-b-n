@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls11 luyện tập vòng lặp 02 bài 6</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <script>
+                for (i = 3; i <= 5; i++) {
+                    for (j = 5; j > i; j--) {
+                        document.write('<span>&nbsp;&nbsp;</span>');
+                    }
+                    for (k = 0; k < i; k++) {
+                        document.write('*' + '<span>&nbsp;&nbsp;</span>');
+                    }
+                    document.write('<br>');
+                }
+            </script>
+        </td>
+        <td>
+            <script>
+                for (i = 3; i <= 5; i++) {
+                    for (j = 5; j > i; j--) {
+                        document.write('<span>&nbsp;&nbsp;</span>');
+                    }
+                    for (k = 0; k < i; k++) {
+                        document.write('*' + '<span>&nbsp;&nbsp;</span>');
+                    }
+                    document.write('<br>');
+                }
+        </script>
+        </td>
+    </tr>
+</table>
+<script>
+    for (i = 10; i > 0; i--) {
+        for (j = 0; j < 10 - i; j++) {
+            document.write('<span>&nbsp;&nbsp;</span>');
+        }
+        for (j = 1; j <= 2 * i - 1; j++) {
+            document.write('*');
+        }
+        document.write('<br>')
+    }
+</script>
+</body>
+</html>
