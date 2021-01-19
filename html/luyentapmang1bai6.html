@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls13 luyuện tập mảng 01 bài 6</title>
+</head>
+<body>
+<script>
+    let numbers = [1, 6, 5, 9, 45, 12, 78, 22, 0, 99];
+    let inputNum = prompt('Nhập vào số bất kì');
+    let check = false;
+
+    for (i = 0; i < numbers.length; i++) {
+        if (inputNum == numbers[i]) {
+            document.write('Số ' + inputNum + ' nằm trong chuỗi')
+            check = true;
+        }
+    }
+
+    if (check == false) {
+        document.write('Số ' + inputNum + ' không nằm trong chuỗi')
+    }
+</script>
+</body>
+</html>

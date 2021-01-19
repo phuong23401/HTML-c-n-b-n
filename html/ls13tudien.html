@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls12 từ điển</title>
+    <style>
+        body {
+            padding-top: 50px
+        }
+    </style>
+</head>
+<body>
+<h1>Translater</h1>
+<input type="text" id="textValue"/>
+<input type="button" id="btnSearch" value="Search" onclick="searchText()"/>
+
+<script>
+    let eng = ['result', 'game', 'music', 'football', 'draw'];
+    let vnes = ['kết quả', 'trò chơi', 'âm nhạc', 'bóng đá', 'vẽ'];
+
+    function searchText() {
+        let inputTxt = document.getElementById('textValue').value;
+        let check = false;
+
+        for (let i = 0; i < eng.length; i++) {
+            if (inputTxt == eng[i]) {
+                document.write(vnes[i]);
+                check = true;
+            }
+        }
+
+        if (check == false) {
+            alert('Không tìm thấy');
+        }
+    }
+</script>
+</body>
+</html>

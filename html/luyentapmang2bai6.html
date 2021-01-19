@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ls13 luyện tập mảng 02 bài 6</title>
+</head>
+<body>
+<script>
+    let text1 = prompt('Nhập chuỗi bất kì');
+    let txt = text1.split(' ');
+
+    for (let i = 0; i < txt.length; i++) {
+        if (txt[i] == '-') {
+            txt [i] = '_'
+        }
+        document.write(txt)
+    }
+</script>
+</body>
+</html>

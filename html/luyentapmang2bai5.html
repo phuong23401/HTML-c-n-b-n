@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls13 luyện tập mảng 02 bài 5</title>
+</head>
+<body>
+<p>Chuỗi 1</p>
+<input type="text" id="txt1"/>
+<p>Chuỗi 2</p>
+<input type="text" id="txt2"/><br><br>
+<button onclick="compare()">So sánh 2 chuỗi</button>
+<script>
+    let text1 = document.getElementById('txt1').value;
+    let text2 = document.getElementById('txt2').value;
+
+    function compare() {
+        if (text1 === text2) {
+            alert('2 chuỗi giống nhau')
+        } else {
+            alert('2 chuỗi khác nhau')
+        }
+
+    }
+</script>
+</body>
+</html>

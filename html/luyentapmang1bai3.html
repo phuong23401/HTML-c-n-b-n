@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls13 luyện tập mảng 01 bài 3</title>
+</head>
+<body>
+<script>
+    let numbers = [12, 78, 22, 0, 99];
+    let max = numbers[0];
+    let index = 0;
+
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] > max) {
+            max = numbers[i];
+            index = 1;
+        }
+    }
+    document.write('Giá trị lớn nhất là: ' + max)
+    document.write('<br>')
+    let total = numbers[0] + numbers[1] + numbers[2] + numbers[3] + numbers[4];
+    let averageValue = total / numbers.length;
+
+    document.write('Giá trị trung bình: ' + averageValue)
+</script>
+</body>
+</html>
