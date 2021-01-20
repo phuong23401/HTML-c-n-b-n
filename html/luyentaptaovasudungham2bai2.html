@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls15 luyện tập tạo và sử dụng hàm 02 bài 2</title>
+</head>
+<body>
+<script>
+    let a = prompt('Nhập bán kính hình tròn');
+    let pi = 3.14;
+
+    function perimeter(number) {
+        number = parseInt(number);
+        return 2 * pi * number;
+    }
+
+    function acreage(number) {
+        number = parseInt(number);
+        return pi * number * number;
+    }
+
+    alert('Chu vi hình tròn là: ' + perimeter(a))
+    alert('Diện tích hình tròn là: ' + acreage(a))
+</script>
+</body>
+</html>

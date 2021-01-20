@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls15 luyện tập tạo và sử dụng hàm 02 bài 3</title>
+</head>
+<body>
+<script>
+    let a = prompt('Nhập vào số nguyên dương bất kì')
+
+    function factorial(number) {
+        number = parseInt(number);
+        for (let i = 0; i < number; i++) {
+            let numPrev = number++;
+            giaithua = number * numPrev;
+        }
+        return giaithua;
+    }
+
+    alert('Giai thừa của ' + a + ' là: ' + factorial(a))
+</script>
+</body>
+</html>

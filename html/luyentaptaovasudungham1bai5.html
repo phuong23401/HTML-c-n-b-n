@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls15 luyện tập tạo và sử dụng hàm 01 bài 5</title>
+</head>
+<body>
+<script>
+    let nameOfStar = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let nameOfConstellation = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    let inputName = prompt('Mời nhập tên ngôi sao');
+
+    function outputConstellation(name) {
+        let j = 0;
+        console.log((nameOfStar.length))
+        for (let i = 0; i < nameOfStar.length; i++) {
+            if (name == nameOfStar[i]) {
+                j = i;
+                return nameOfConstellation[j];
+            }
+        }
+        return false;
+    }
+
+
+    alert(outputConstellation(inputName));
+</script>
+</body>
+</html>

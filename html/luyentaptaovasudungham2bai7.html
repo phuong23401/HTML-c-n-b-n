@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls15 luyện tập tạo và sử dụng hàm 02 bài 7</title>
+</head>
+<body>
+<script>
+    let num1 = prompt('Nhập số thứ 1');
+    let num2 = prompt('Nhập số thứ 2');
+    
+    function changePlace(a, b) {
+        b = [a, a = b][0];
+        return 'a = ' + a + ', b = ' + b;
+    }
+
+    alert(changePlace(num1, num2))
+</script>
+</body>
+</html>

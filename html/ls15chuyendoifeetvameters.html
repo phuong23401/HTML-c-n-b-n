@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls15 chuyển đổi feet và meters</title>
+</head>
+<body>
+<p>
+    <label>Feet: </label>
+    <input type="number" oninput="feetToMeters(this.value)" onchange="feetToMeters(this.value)" placeholder="Feet">
+</p>
+<p>Meters: <span id="outputMeters"></span></p><br>
+
+<p>
+    <label>Meters: </label>
+    <input type="number" oninput="metersToFeet(this.value)" onchange="metersToFeet(this.value)" placeholder="Meters">
+</p>
+<p>Feet: <span id="outputFeet"></span></p><br>
+
+<script>
+    function feetToMeters(feet) {
+        feet = parseInt(feet);
+        document.getElementById('outputMeters').innerHTML = 0.305 * feet;
+    }
+
+    function metersToFeet(meter) {
+        meter = parseInt(meter);
+        document.getElementById('outputFeet').innerHTML = 3.279 * meter;
+    }
+</script>
+</body>
+</html>

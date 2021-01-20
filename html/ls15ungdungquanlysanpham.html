@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls15 ứng dụng quản lý sản phẩm</title>
+</head>
+<body>
+<h3>Add new product</h3>
+<input type="text" id="inputTxt">
+<button onclick="addProduct()">Add</button>
+<h3>Display All Product</h3>
+<table>
+    <script>
+        let products = ['Iphone X', 'Iphone Xs', 'Iphone Xs Max', 'Iphone Xr', 'Iphone 11', 'Iphone 11 Pro', 'Iphone 11 Pro Max'];
+        let sout;
+        sout = '<table>'
+
+        function displayProduct() {
+            for (let i = 1; i < products.length; i++) {
+                sout = sout + '<tr>';
+                sout = sout + '<td>' + i + '.' + '</td>';
+                sout = sout + '<td>' + products[i] + '</td>';
+                sout = sout + '<td>' + '<button>Edit</button>' + '</td>';
+                sout = sout + '<td>' + '<button>Delete</button>' + '</td>';
+
+            }
+            document.write(sout)
+        }
+
+        function addProduct(name) {
+            let productName = document.getElementById('inputTxt').value;
+            name = productName.split(',');
+            name.push(products);
+        }
+
+        function editProduct(name) {
+            let product = products[name];
+
+        }
+
+        function deleteProduct(name) {
+            products.splice(name, 1);
+        }
+
+        displayProduct(products)
+        deleteProduct(products)
+    </script>
+</table>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls15 hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        let sprtNum = parseInt(Math.sqrt(number));
+        for (let i = 2; i <= sprtNum; i++) {
+            if (number % i == 0) {
+                result = number + ' không là số nguyên tố';
+            } else {
+                result = number + ' là số nguyên tố'
+            }
+            return result;
+        }
+    }
+
+    let inputNum = prompt('Nhập số bất kì');
+    let primeNum = isPrime(inputNum);
+    document.write(primeNum)
+</script>
+</body>
+</html>
