@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls17 ứng dụng mô phỏng adam và eva</title>
+</head>
+<body>
+<h3>Human</h3>
+<table>
+    <th>
+        <button onclick="main()">Check Apple</button>
+    </th>
+    <th>
+        <button onclick="main1()">Eat Apple</button>
+    </th>
+    <th>
+        <button onclick="main2()">Say</button>
+    </th>
+</table>
+<script>
+    let Apple = function (weightApple) {
+
+        this.weight = weightApple;
+
+        this.getWeightApple = function () {
+            console.log(weightApple);
+        };
+
+        this.decrease = function () {
+            if (this.weight > 0) {
+                weightApple--;
+            }
+            if (weightApple <= 0) {
+                alert('Run out of apple!');
+            }
+        }
+    };
+
+    let Human = function (name, gender, weightHuman) {
+
+        this.name = name;
+        this.gender = gender;
+        this.weight = weightHuman;
+
+        this.getName = function () {
+            document.write('Name: ' + name + '<br>');
+        };
+
+        this.getGender = function () {
+            document.write('Gender: ' + gender + '<br>');
+        };
+
+        this.getWeightHuman = function () {
+            document.write('Weight: ' + weightHuman);
+        };
+
+        this.checkApple = function () {
+            apple.getWeightApple();
+        };
+
+        this.eat = function () {
+            apple.decrease();
+            if (weightHuman < 80) {
+                weightHuman++;
+            }
+            console.log('Weight of human after eat: ' + weightHuman)
+        };
+
+        this.say = function () {
+            alert('Hello');
+        }
+    }
+
+    let apple = new Apple(10);
+    console.log(apple);
+    let human = new Human('Adam', 'Male', 70);
+    human.getName();
+    human.getGender();
+    human.getWeightHuman();
+
+    function main() {
+        human.checkApple();
+    }
+
+    function main1() {
+        human.eat();
+    }
+
+    function main2() {
+        human.say();
+    }
+
+</script>
+</body>
+</html>

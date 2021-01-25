@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls16 xây dựng lớp hình tròn</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;">1
+<script>
+    let Circle = function(radius) {
+
+        this.radius = radius;
+
+    }
+    this.getRadius = function() {
+        return radius;
+    }
+    this.getArea = function() {
+        return Math.PI * radius * radius;
+    }
+    let circle = new Circle(4);
+    let radius = circle.getRadius(2);
+    let area = circle.getArea(12.566370614359172 );
+
+    alert("radius: " + radius + "; area: " + area)
+
+</script>
+</body>
+</html>

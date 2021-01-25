@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls16 xây dựng lớp temperature</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let res = document.getElementById('result');
+
+    function temperature(c) {
+        this.tempC = c;
+        this.convertCtoF = function () {
+            res.innerHTML = c + ' độ C = ' + this.tempC * 1.8 + 32 + ' độ F'
+        }
+        this.convertCtoK = function () {
+            res.innerHTML = c + ' độ C = ' + this.tempC + 273.15 + ' độ K'
+        }
+    }
+    let temp = new temperature(25);
+    temp.convertCtoF();
+    temp.convertCtoK();
+</script>
+</body>
+</html>

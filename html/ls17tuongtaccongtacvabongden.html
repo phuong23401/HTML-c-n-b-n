@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls17 công tắc và bóng đèn</title>
+</head>
+<body>
+<button onclick="btnOn">Bật</button>
+<button onclick="btnOff">Tắt</button>
+<script>
+    let Lamp = function (status) {
+        this.status = status;
+
+        this.turnOn = function () {
+            alert('Đèn đang bật');
+        };
+
+        this.turnOff = function () {
+            alert('Đèn đang tắt');
+        };
+
+        this.electircLamp = function () {
+            return this.status;
+        };
+    }
+
+    let SwitchButton = function (btnStatus) {
+        this.status = btnStatus;
+
+        this.switchOn = function () {
+            lamp.turnOn();
+        };
+
+        this.witchOff = function () {
+            lamp.turnOff();
+        };
+
+        this.connectToLamp = function () {
+            lamp.electircLamp();
+        };
+    }
+
+    let lamp = new Lamp();
+    let switchBtn = new SwitchButton();
+    switchBtn.connectToLamp();
+
+    function btnOn() {
+        switchBtn.switchOn();
+    }
+
+    function btnOff() {
+        switchBtn.witchOff();
+    }
+</script>
+</body>
+</html>

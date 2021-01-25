@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls16 xây dựng lớp mô tả điện thoại</title>
+    <style>
+        button {
+            cursor: pointer;
+            background-color: darkslategrey;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="margin-left: 500px">My phone</h1>
+<table>
+    <th>
+        <button onclick="main()">Bật</button>
+    </th>
+    <th>
+        <button onclick="main1()">Tắt</button>
+    </th>
+    <th>
+        <button onclick="main2()">Sạc pin</button>
+    </th>
+    <th>
+        <button onclick="main3()">Soạn tin nhắn</button>
+    </th>
+    <th>
+        <button onclick="main4()">Tin nhắn mới</button>
+    </th>
+    <th>
+        <button onclick="main5()">Tin đã gửi</button>
+    </th>
+    <th>
+        <button onclick="main6()">Hộp thư đến</button>
+    </th>
+    <th>
+        <button onclick="main7()">Hộp thư đi</button>
+    </th>
+    <th>
+        <button onclick="main8()">Sử dụng đi</button>
+    </th>
+    <th>
+        <button onclick="main9()">Điện thoại chưa bật</button>
+    </th>
+</table>
+<script>
+    let Mobile = function (battery, memoryArea1, memoryArea2, memoryArea3) {
+        this.battery = battery;
+        this.memoryArea1 = memoryArea1;
+        this.memoryArea2 = memoryArea2;
+        this.memoryArea3 = memoryArea3;
+        this.checkStatusOnOff = function () {
+
+            if (this.battery > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+
+        this.turnOn = function () {
+            alert("Điện thoại đang bật");
+        };
+
+        this.turnOff = function () {
+            alert("Điện thoại đang tắt");
+        };
+
+        this.charge = function () {
+            alert("Sạc Pin" + this.battery++);
+        };
+
+        this.writeMessenger = function () {
+            prompt("Viết tin nhắn mới");
+        };
+
+        this.inbox = function () {
+            alert("1 tin nhắn mới");
+        };
+
+        this.outbox = function () {
+            alert("Gửi tin nhắn")
+        };
+
+        this.checkInbox = function () {
+            alert("Xem hộp thư đến")
+        };
+
+        this.checkOutbox = function () {
+            alert("Xem hộp  thư đi")
+        };
+
+        this.afterUse = function () {
+            alert("Dung mot chuc nang :" + this.battery--);
+        };
+
+        this.notTurnedOn = function () {
+            alert("Điện thoại chưa bật")
+        }
+    }
+
+    let mobile = new Mobile(10, 100, 100, 100);
+
+    function main() {
+        mobile.turnOn();
+    }
+
+    function main1() {
+        mobile.turnOff();
+    }
+
+    function main2() {
+        mobile.charge();
+    }
+
+    function main3() {
+        mobile.writeMessenger();
+    }
+
+    function main4() {
+        mobile.inbox();
+    }
+
+    function main5() {
+        mobile.outbox();
+    }
+
+    function main6() {
+        mobile.checkInbox();
+    }
+
+    function main7() {
+        mobile.checkOutbox();
+    }
+
+    function main8() {
+        mobile.afterUse();
+    }
+
+    function main9() {
+        mobile.notTurnedOn();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls16 xây dựng lớp hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"/>
+<script>
+    function rectangle(cd, cr) {
+        this.cd = cd;
+        this.cr = cr;
+    }
+
+    function creatRectangle() {
+        let canvas = document.getElementById('myCanvas');
+        let ctx = canvas.getContext('2d');
+        let cd = prompt('Nhập chiều dài');
+        let cr = prompt('Nhập chiều rộng');
+        ctx.fillStyle = '#FF0000';
+        ctx.fillRect(0, 0, cd, cr);
+        document.write('Chu vi hình chữ nhật: ' + 2 * (cd + cr));
+        document.write('Diện tích: ' + cd * cr);
+    }
+
+    creatRectangle()
+</script>
+</body>
+</html>
