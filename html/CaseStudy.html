@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Study: Bouncing Ball</title>
+</head>
+<body>
+<canvas id="myCanvas" width="700px" height="500px" style="border:1px solid black;">
+    <img id="img" src="vutrudocx-1595028489990.png" height="360" width="640"/></canvas>
+<script>
+    const image = document.getElementById('img');
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    const netWidth = canvas.width;
+    const netHeight = canvas.height;
+    const paddleWidth = 10;
+    const paddleHeight = 100;
+
+    let upArrowPressed = false;
+    let downArrowPressed = false;
+    let wArrowPressed = false;
+    let sArrowPressed = false;
+
+    const net = {
+        x: canvas.width / 2 - netWidth / 2,
+        y: 0,
+        width: netWidth,
+        height: netHeight,
+        color: '#ccc'
+    };
+
+    const player1 = {
+        x: 10,
+        y: canvas.height / 2 - paddleHeight,
+        width: paddleWidth,
+        height: paddleHeight,
+        color: '#0000FF',
+        score: 0
+    };
+
+    const player2 = {
+        x: canvas.width - (paddleWidth + 10),
+        y: canvas.height / 2 - paddleHeight,
+        width: paddleWidth,
+        height: paddleHeight,
+        color: '#0000FF',
+        score: 0
+    };
+
+    const ball = {
+        x: canvas.width / 2,
+        y: canvas.height / 2,
+        radius: 10,
+        speed: 10,
+        velocityX: 5,
+        velocityY: 5,
+        color: '#FF0000'
+    };
+
+    function drawNet() {
+        ctx.fillStyle = net.color;
+        ctx.fillRect(net.x, net.y, net.width, net.height);
+        ctx.drawImage(image, 0, 0, 640, 360, 0, 0, 700, 500)
+    }
+
+    function drawScore(x, y, score) {
+        ctx.fillStyle = '#FFF';
+        ctx.font = '30px sans-serif';
+        ctx.fillText(score, x, y);
+    }
+
+    function drawPaddle(x, y, width, height, color) {
+        ctx.fillStyle = color;
+        ctx.fillRect(x, y, width, height);
+    }
+
+    function drawBall(x, y, radius, color) {
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    window.addEventListener('keydown',keyDownHandler);
+    window.addEventListener('keyup',keyUpHandler);
+
+    function keyDownHandler(event) {
+        switch (event.keyCode) {
+            case 38:
+                upArrowPressed = true;
+                break;
+            case 40:
+                downArrowPressed = true;
+                break;
+            case 87:
+                wArrowPressed = true;
+                break;
+            case 83:
+                sArrowPressed = true;
+                break;
+        }
+    }
+
+    function keyUpHandler(event) {
+        switch (event.keyCode) {
+            case 38:
+                upArrowPressed = false;
+                break;
+            case 40:
+                downArrowPressed = false;
+                break;
+            case 87:
+                wArrowPressed = false;
+                break;
+            case 83:
+                sArrowPressed = false;
+        }
+    }
+
+    function update() {
+        if (upArrowPressed && player1.y > 0) {
+            player1.y -= 8;
+        } else if (downArrowPressed && (player1.y < canvas.height - player1.height)) {
+            player1.y += 8;
+        }
+        if (wArrowPressed && player2.y > 0) {
+            player2.y -= 8;
+        } else if (sArrowPressed && (player2.y < canvas.height - player2.height)) {
+            player2.y += 8;
+        }
+
+        if (ball.y + ball.radius >= canvas.height || ball.y - ball.radius <= 0) {
+            ball.velocityY = -ball.velocityY;
+        }
+        if (ball.x + ball.radius >= canvas.width) {
+            player1.score += 1;
+            reset();
+        }
+        if (ball.x + ball.radius <= 0) {
+            player2.score += 1;
+            reset();
+        }
+
+        ball.x += ball.velocityX;
+        ball.y += ball.velocityY;
+        // player2.y += ((ball.y - (player2.y + player2.height / 2))) * 0.09; chơi với AI
+
+        let player = (ball.x < canvas.width / 2) ? player1 : player2;
+        if (collisionDetect(player, ball)) {
+            let angle = 0;
+            if (ball.y < (player.y + player.height / 2)) {
+                angle = -1 * Math.PI / 4;
+            } else if (ball.y > (player.y + player.height / 2)) {
+                angle = Math.PI / 4;
+            }
+            ball.velocityX = (player === player1 ? 1 : -1) * ball.speed * Math.cos(angle);
+            ball.velocityY = ball.speed * Math.sin(angle);
+            ball.speed += 0.15;
+        }
+    }
+
+    function reset() {
+        ball.x = canvas.width / 2;
+        ball.y = canvas.height / 2;
+        ball.speed = 10;
+
+        ball.velocityX = -ball.velocityX;
+        ball.velocityY = -ball.velocityY;
+    }
+
+    function collisionDetect(player, ball) {
+        player.top = player.y;
+        player.right = player.x + player.width;
+        player.bottom = player.y + player.height;
+        player.left = player.x;
+
+        ball.top = ball.y - ball.radius;
+        ball.right = ball.x + ball.radius;
+        ball.bottom = ball.y + ball.radius;
+        ball.left = ball.x - ball.radius;
+
+        return ball.left < player.right && ball.top < player.bottom && ball.right > player.left && ball.bottom > player.top;
+    }
+
+    function render() {
+        ctx.fillStyle = '#ccc';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        drawNet();
+        drawBall(ball.x, ball.y, ball.radius, ball.color);
+        drawScore(canvas.width / 4, canvas.height / 6, player1.score);
+        drawScore(3 * canvas.width / 4, canvas.height / 6, player2.score);
+        drawPaddle(player1.x, player1.y, player1.width, player1.height, player1.color);
+        drawPaddle(player2.x, player2.y, player2.width, player2.height, player2.color);
+    }
+
+    function gameLoop() {
+        update();
+        render();
+        gameOver();
+
+    }
+
+    function gameOver(){
+        if(player1.score == 10){
+            alert("Player1 won")
+            player1.score = 0;
+            location.reload();
+        } else if(player2.score == 10){
+            alert("Player2 won")
+            player2.score = 0;
+            location.reload();
+        }
+    }
+
+    setInterval(gameLoop, 1000 / 60);
+</script>
+</body>
+</html>

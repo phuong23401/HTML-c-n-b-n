@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls17 phát triển game cờ ca-ro</title>
+    <style>
+        td {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 30px;
+            border: 1px solid blue;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<table id="caro-game" class="my-table" border="1px" cellspacing="0"></table>
+<script>
+    const maxRow = 10;
+    const maxCol = 10;
+    const PLAYER_X = 1;
+    const PLAYER_O = 2;
+    const VALUE_X = "X";
+    const VALUE_O = "O";
+
+    let turn = PLAYER_X;
+
+    //Ve ban co
+    function drawBoard() {
+        let str = '';
+        for (let i = 0; i < maxRow; i++) {
+            str += '<tr>';
+            for (let j = 0; j < maxCol; j++) {
+                str += '<td id="cell-' + i + "-" + j + '" onclick="clickCell(' + i + "," + j + ')"></td>';
+            }
+            str += "</tr>";
+        }
+        document.getElementById('caro-game').innerHTML = str;
+    }
+
+    //click X,O
+    function clickCell(x, y) {
+        let cell = document.getElementById("cell-" + x + "-" + y);
+        console.log(cell);
+
+        if (cell.innerHTML === "") {
+            if (turn == PLAYER_X) {
+                cell.innerHTML = VALUE_X;
+                turn = PLAYER_O;
+            } else {
+                cell.innerHTML = VALUE_O;
+                turn = PLAYER_X;
+            }
+        }
+        checkWin(x, y);
+    }
+
+    function getValue(x, y) {
+        let value = document.getElementById("cell-" + x + "-" + y).innerHTML;
+        return value;
+    }
+
+    function checkNgang(x, y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while (getValue(x, y) == getValue(x, y + i)) {
+            count++;
+            i++;
+        }
+
+        while (getValue(x, y) == getValue(x, y - j)) {
+            count++;
+            j++;
+        }
+
+        gameOver(count);
+    }
+
+    function checkDoc(x, y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while (getValue(x, y) == getValue(x + i, y)) {
+            count++;
+            i++;
+        }
+
+        while (getValue(x, y) == getValue(x - j, y)) {
+            count++;
+            j++;
+        }
+
+        gameOver(count);
+    }
+
+    function checkCheo1(x, y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while (getValue(x, y) == getValue(x + i, y + j)) {
+            count++;
+            i++;
+        }
+
+        while (getValue(x, y) == getValue(x - i, y - j)) {
+            count++;
+            j++;
+        }
+
+        gameOver(count);
+    }
+
+    function checkCheo2(x, y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while (getValue(x, y) == getValue(x - i, y + j)) {
+            count++;
+            i++;
+        }
+
+        while (getValue(x, y) == getValue(x + i, y - j)) {
+            count++;
+            j++;
+        }
+
+        gameOver(count);
+    }
+
+    //checkWin
+    function checkWin(x, y) {
+        checkNgang(x, y);
+        checkDoc(x, y);
+        checkCheo1(x, y);
+        checkCheo2(x, y);
+    }
+
+    function gameOver(count) {
+        if (count >= 5) {
+            alert("Bạn đã thắng!");
+            resetGame();
+        }
+    }
+
+    //chơi lại
+    function resetGame() {
+        gameBoard = new drawBoard();
+    }
+
+    drawBoard();
+</script>
+</body>
+</html>

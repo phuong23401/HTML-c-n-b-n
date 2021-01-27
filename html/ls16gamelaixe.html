@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ls16 game lái xe</title>
+</head>
+<body onload="doReady()">
+<canvas id="myCanvas" width="500px" height="500px" style="border:3px solid black"/>
+<div id="gameCar"></div>
+<script>
+    function Car(image, top, left, size) {
+        this.image = image;
+        this.top = top;
+        this.left = left;
+        this.size = size;
+
+        this.getCarElement = function () {
+            return '<img width="' + this.size + '"' +
+                ' height="' + this.size + '"' +
+                ' src="' + this.image + '"' +
+                ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />';
+        }
+
+        this.moveRight = function () {
+            let element = document.getElementById('myCanvas');
+            element.style.left = parseInt(element.style.left) + 5 + 'px';
+        }
+
+        this.moveLeft = function () {
+            let element = document.getElementById("myCanvas");
+            element.style.left = parseInt(element.style.left) - 5 + 'px';
+        }
+
+        this.moveUp = function () {
+            let element = document.getElementById("myCanvas");
+            element.style.top = parseInt(element.style.left) - 5 + 'px';
+        }
+
+        this.moveDown = function () {
+            let element = document.getElementById("myCanvas");
+            element.style.top = parseInt(element.style.left) + 5 + 'px';
+        }
+    }
+    
+    let car = new Car('car.png', 10, 10, 50);
+
+    function moveSelection() {
+       car.moveDown();
+       car.moveUp();
+       car.moveLeft();
+       car.moveRight();
+    }
+
+    function doReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+
+    document.getElementById('gameCar').innerHTML = car.getCarElement();
+
+</script>
+</body>
+</html>
