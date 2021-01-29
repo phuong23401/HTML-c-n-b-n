@@ -11,8 +11,6 @@
     const image = document.getElementById('img');
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
-    const netWidth = canvas.width;
-    const netHeight = canvas.height;
     const paddleWidth = 10;
     const paddleHeight = 100;
 
@@ -20,14 +18,6 @@
     let downArrowPressed = false;
     let wArrowPressed = false;
     let sArrowPressed = false;
-
-    const net = {
-        x: canvas.width / 2 - netWidth / 2,
-        y: 0,
-        width: netWidth,
-        height: netHeight,
-        color: '#ccc'
-    };
 
     const player1 = {
         x: 10,
@@ -57,10 +47,8 @@
         color: '#FF0000'
     };
 
-    function drawNet() {
-        ctx.fillStyle = net.color;
-        ctx.fillRect(net.x, net.y, net.width, net.height);
-        ctx.drawImage(image, 0, 0, 640, 360, 0, 0, 700, 500)
+    function drawBackground() {
+        ctx.drawImage(image, 0, 0, 700, 500)
     }
 
     function drawScore(x, y, score) {
@@ -82,8 +70,8 @@
         ctx.fill();
     }
 
-    window.addEventListener('keydown',keyDownHandler);
-    window.addEventListener('keyup',keyUpHandler);
+    window.addEventListener('keydown', keyDownHandler);
+    window.addEventListener('keyup', keyUpHandler);
 
     function keyDownHandler(event) {
         switch (event.keyCode) {
@@ -144,7 +132,9 @@
 
         ball.x += ball.velocityX;
         ball.y += ball.velocityY;
-        // player2.y += ((ball.y - (player2.y + player2.height / 2))) * 0.09; chơi với AI
+
+        //chơi với máyx
+        // player2.y += ((ball.y - (player2.y + player2.height / 2))) * 0.09;
 
         let player = (ball.x < canvas.width / 2) ? player1 : player2;
         if (collisionDetect(player, ball)) {
@@ -187,7 +177,7 @@
         ctx.fillStyle = '#ccc';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        drawNet();
+        drawBackground();
         drawBall(ball.x, ball.y, ball.radius, ball.color);
         drawScore(canvas.width / 4, canvas.height / 6, player1.score);
         drawScore(3 * canvas.width / 4, canvas.height / 6, player2.score);
@@ -202,12 +192,12 @@
 
     }
 
-    function gameOver(){
-        if(player1.score == 10){
+    function gameOver() {
+        if (player1.score == 10) {
             alert("Player1 won")
             player1.score = 0;
             location.reload();
-        } else if(player2.score == 10){
+        } else if (player2.score == 10) {
             alert("Player2 won")
             player2.score = 0;
             location.reload();
