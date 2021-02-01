@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt('nhập cạnh thứ 1: ');
+    let b = prompt('nhập cạnh thứ 2: ');
+    let c = prompt('nhập cạnh thứ 3: ');
+
+    if (Number.isInteger(a) && Number.isInteger(b) && Number.isInteger(c)) {
+        if (a == b && b == c && c == a) {
+            alert('Tam giác đều');
+        } else if (a == b || b == c || c == a) {
+            alert('Tam giác cân')
+        } else if (a * a == b * b + c * c || b * b == a * a + c * c || c * c == a * a + b * b) {
+            alert('Tam giác vuông')
+        }
+    } else {
+        alert('Không phải tam giác')
+    }
+</script>
+</body>
+</html>
