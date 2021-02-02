@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="res"></p>
+<script>
+    function SinhVien(msv, name, toan, li, hoa) {
+        this.msv = msv;
+        this.name = name;
+        this.toan = toan;
+        this.li = li;
+        this.hoa = hoa;
+        this.dtb = (toan + li + hoa) / 3;
+        this.show = function () {
+            return 'Mã SV: ' + this.msv + ', Họ tên: ' + this.name + ', Điểm trung bình: ' + this.dtb;
+        }
+    }
+
+    function Manage() {
+        this.studentList = [new SinhVien(1, 'B', 7, 8, 9), new SinhVien(2, 'D', 6, 8, 7), new SinhVien(3, 'C', 8, 8, 9)];
+        this.add = function (student) {
+            this.studentList.push(student);
+        }
+
+        this.show = function () {
+            let str = '';
+            for (let i = 0; i < this.studentList.length; i++) {
+                str += this.studentList[i].show() + '<br>';
+            }
+            return str;
+        }
+
+        this.edit = function (msv, student) {
+            for (let i = 0; i < this.studentList.length; i++) {
+                if (msv == this.studentList[i].msv) {
+                    this.studentList[i] = student;
+                }
+            }
+        }
+
+        this.delete = function (msv) {
+            for (let i = 0; i < this.studentList.length; i++) {
+                if (msv == this.studentList[i].msv) {
+                    this.studentList.slice(i, 1);
+                }
+            }
+        }
+
+        this.sort = function () {
+            for (let i = 0; i < this.studentList.length - 1; i++) {
+                for (let j = i + 1; j < this.studentList.length; j++) {
+                    if (this.studentList[j].dtb < this.studentList[i].dtb) {
+                        let temp = this.studentList[i];
+                        this.studentList = this.studentList[j];
+                        this.studentList[j] = temp;
+                    }
+                }
+            }
+        }
+    }
+
+    let manage = new Manage();
+    manage.add(new SinhVien(4, 'A', 9, 9, 9));
+    manage.edit(2, new SinhVien(2, 'E', 7, 7, 7));
+    manage.delete(3);
+    document.getElementById('res').innerHTML = manage.show();
+    manage.sort();
+</script>
+</body>
+</html>
