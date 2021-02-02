@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function simpleFraction(x, y) {
+        this.x = x;
+        this.y = y;
+        this.calculate = function () {
+            if (this.y == 0) {
+                console.log('false');
+            } else if (this.x % this.y == 0) {
+                return this.x / this.y;
+            } else {
+                let a = 1;
+                for (let i = 0; i <= this.x; i++) {
+                    if (this.y % this.x == 0) {
+                        a = i;
+                    }
+                }
+                return  this.x / a + '/' + this.y / a;
+            }
+        }
+    }
+
+    let num1 = prompt('Nhập số thứ 1: ');
+    let num2 = prompt('Nhập số thứ 2: ');
+    let test = new simpleFraction(num1, num2);
+    document.write(test.calculate())
+</script>
+</body>
+</html>
