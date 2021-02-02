@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function DaThuc(n) {
+        this.n = n;
+        this.heSo = [];
+
+        this.nhapDaThuc = function () {
+            for (let i = n; i >= 0 ; i--) {
+                this.heSo[i] = prompt('Nhập hệ số bậc: ' + i);
+            }
+        }
+        
+        this.inRaDaThuc = function () {
+            let str = '';
+            for (let i = 0; i >= 1; i--) {
+                str += this.heSo[i] + 'x^' + i + '+';
+            }
+            str += this.heSo[0];
+            return str;
+        }
+    }
+
+    let n = prompt('Nhập bậc đa thức: ');
+    let dt = new DaThuc(n);
+    dt.nhapDaThuc();
+    alert(dt.inRaDaThuc());
+</script>
+</body>
+</html>
