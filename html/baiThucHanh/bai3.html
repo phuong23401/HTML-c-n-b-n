@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt('Nhập vào số nguyên bất kì: ');
+    let fibo1 = 0;
+    let fibo2 = 1;
+
+    function isFibonacci(a) {
+        let fibo = fibo1 + fibo2;
+        for (let i = 0; i <= 100; i++) {
+            fibo1 = fibo2;
+            fibo2 = fibo;
+        }
+        if (fibo == a) {
+            alert('Số vừa nhập thuộc dãy Fibonacci');
+        } else {
+            alert('Số vừa nhập không thuộc dãy Fibonacci');
+        }
+    }
+
+    isFibonacci(number);
+</script>
+</body>
+</html>

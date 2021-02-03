@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let myArr = [1, 6, 99, 45, 32, 40, 77, 10, 100, 56, 41];
+    let x = prompt('Nhập số bất kì: ');
+    let check = false;
+
+    function tryRemoveFromArray(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (x != arr[i]) {
+                check = true;
+            } else {
+                arr.splice(i, 1);
+            }
+        }
+        if (check = true) {
+            console.log(arr);
+        }
+    }
+    tryRemoveFromArray(myArr);
+</script>
+</body>
+</html>
