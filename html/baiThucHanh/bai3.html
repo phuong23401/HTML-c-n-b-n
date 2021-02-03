@@ -9,14 +9,15 @@
     let number = prompt('Nhập vào số nguyên bất kì: ');
     let fibo1 = 0;
     let fibo2 = 1;
+    let fibo = 1;
 
     function isFibonacci(a) {
-        let fibo = fibo1 + fibo2;
-        for (let i = 0; i <= 100; i++) {
+        while (fibo1 + fibo2 <= a) {
+            fibo = fibo1 + fibo2;
             fibo1 = fibo2;
             fibo2 = fibo;
         }
-        if (fibo == a) {
+        if (fibo == a || a == 0) {
             alert('Số vừa nhập thuộc dãy Fibonacci');
         } else {
             alert('Số vừa nhập không thuộc dãy Fibonacci');
